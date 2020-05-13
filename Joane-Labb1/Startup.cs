@@ -18,6 +18,7 @@ namespace Joane_Labb1
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -73,5 +74,7 @@ namespace Joane_Labb1
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
+
     }
 }

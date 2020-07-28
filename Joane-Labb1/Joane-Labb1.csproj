@@ -7,6 +7,11 @@
     <RootNamespace>Joane_Labb1</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20200703073523_CartCreate.cs" />
+    <Compile Remove="Data\Migrations\20200703073523_CartCreate.Designer.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />

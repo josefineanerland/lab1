@@ -14,5 +14,6 @@ namespace Joane_Labb1.Data
         {
         }
         public DbSet<Joane_Labb1.Models.ProductModel> ProductModel { get; set; }
+        public DbSet<Joane_Labb1.Models.CartModel> CartModel { get; set; }
     }
 }

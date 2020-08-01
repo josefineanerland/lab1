@@ -97,5 +97,24 @@ namespace Joane_Labb1.Controllers
                 return Redirect("~/Identity/Account/Login");
             }
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> PlaceOrder([Bind("Firstname,Lastname,Adress,PostalCode,City")] OrderModel orderModel)
+        {
+            if (ModelState.IsValid)
+            {
+                //if(!(_context.OrderModel.Any()))
+                //{
+                //    orderModel.OrderId = 1;
+                //}
+                
+                orderModel.UserId = Guid.Parse(_context.Users.FirstOrDefault(u => u.UserName == User.Identity.Name).Id);
+                _context.Add(orderModel);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            //return View(orderModel);
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

@@ -12,6 +12,7 @@ namespace Joane_Labb1.Controllers
 {
     public class ProductModelsController : Controller
     {
+
         private readonly ApplicationDbContext _context;
 
         public ProductModelsController(ApplicationDbContext context)

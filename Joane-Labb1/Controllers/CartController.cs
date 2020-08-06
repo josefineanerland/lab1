@@ -9,6 +9,7 @@ using Joane_Labb1.Models;
 using Microsoft.AspNetCore.Http;
 using Joane_Labb1.Helpers;
 using Joane_Labb1.Data;
+using Newtonsoft.Json;
 
 
 
@@ -99,8 +100,10 @@ namespace Joane_Labb1.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> PlaceOrder([Bind("Firstname,Lastname,Adress,PostalCode,City")] OrderModel orderModel)
+        public async Task<IActionResult> PlaceOrder([Bind("Firstname,Lastname,Adress,PostalCode,City,Orderdate,Products")] OrderModel orderModel)
         {
+            var cart = SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
+
             if (ModelState.IsValid)
             {
                 //if(!(_context.OrderModel.Any()))
@@ -109,9 +112,11 @@ namespace Joane_Labb1.Controllers
                 //}
                 
                 orderModel.UserId = Guid.Parse(_context.Users.FirstOrDefault(u => u.UserName == User.Identity.Name).Id);
+                orderModel.Orderdate = DateTime.Now;
+                orderModel.Products = JsonConvert.SerializeObject(cart);   
                 _context.Add(orderModel);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(nameof(Index));
             }
             //return View(orderModel);
             return RedirectToAction("Index", "Home");

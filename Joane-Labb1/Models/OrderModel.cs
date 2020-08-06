@@ -15,7 +15,9 @@ namespace Joane_Labb1.Models
         public string Lastname { get; set; }
         public string Adress { get; set; }
         public int PostalCode { get; set; }
-        public string City { get; set;
-        }
+        public string City { get; set; }
+        public DateTime Orderdate { get; set; }
+        public string Products { get; set; }
+        
     }
 }

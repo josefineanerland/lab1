@@ -4,14 +4,16 @@ using Joane_Labb1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Joane_Labb1.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200801095002_AddedOrderModels")]
+    partial class AddedOrderModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,11 +52,7 @@ namespace Joane_Labb1.Data.Migrations
 
                     b.Property<string>("Lastname");
 
-                    b.Property<DateTime>("Orderdate");
-
                     b.Property<int>("PostalCode");
-
-                    b.Property<string>("Products");
 
                     b.Property<Guid>("UserId");
 

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Joane_Labb1.Models.ProductModel>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Products</h1>
+
+@if (SignInManager.IsSignedIn(User) && User.Identity.Name == "admin@admin.se")
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+    <div class="card-deck" style="padding-left:5px; padding-right:5px;">
+
+        @foreach (var item in Model)
+        {
+            <div class="card">
+                <img src="@item.ImageUrl" class="card-img-top" alt="@item.ProductName">
+                <div class="card-body text-center">
+                    <h5 class="card-title" text-center">@item.ProductName</h5>
+                    <p class="card-text">@item.Description</p>
+                    <p class="card-text">@item.Price.ToString("C")</p>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    @if (SignInManager.IsSignedIn(User) && User.Identity.Name == "admin@admin.se")
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id"> Delete </a>}
+                    <br />
+                    <br />
+                    <a class="btn btn-outline-success" asp-controller="cart" asp-action="AddToCart" asp-route-id="@item.Id">Add to cart</a>
+                </div>
+            </div>
+        }
+    </div>
+

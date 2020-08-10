@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Cart";
+}
+
+<h1>Cart</h1>
+
+@if (ViewBag.cart != null)
+{
+    <div class="card-deck" style="padding-left:5px; padding-right:5px;">
+
+        <table class="table table-bordered">
+            <tr>
+                <th>Option</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Sub Total</th>
+            </tr>
+            @foreach (var item in ViewBag.cart)
+            {
+                <tr>
+                    <td><a asp-controller="cart" asp-action="RemoveFromCart" asp-route-id="@item.Product.Id">Remove</a></td>
+                    <td>@item.Product.ProductName</td>
+                    <td>@item.Product.Price</td>
+                    <td><button type="button" class="btn btn-danger btn-sm">-</button> @item.Quantity <button type="button" class="btn btn-success btn-sm">+</button></td>
+                    <td>@(item.Product.Price * item.Quantity)</td>
+                </tr>
+            }
+            <tr>
+                <td align="right" colspan="6">Total Price @ViewBag.total</td>
+            </tr>
+        </table>
+        <a class="btn btn-outline-danger" asp-controller="ProductModels" asp-action="Index">Add more products</a> <a class="btn btn-outline-success" asp-controller="cart" asp-action="ProceedToCheckout" style="margin-left:10px;">Proceed to checkout</a>
+
+    </div>
+}
+else
+{
+    <h4>Your cart is empty.</h4>
+    <a class="btn btn-outline-danger" asp-controller="ProductModels" asp-action="Index">See all products</a>
+}

@@ -6,7 +6,7 @@ using OrderService.Model;
 
 namespace OrderService.Repository
 {
-    interface IOrderRepository
+    public interface IOrderRepository
     {
         IEnumerable<Order> GetOrders();
         Order GetOrderById(int OrderId);

@@ -43,7 +43,7 @@ namespace OrderService.Controllers
             {
                 _orderRepository.InsertOrder(order);
                 scope.Complete();
-                return CreatedAtAction(nameof(Get), new { id = order.OrderId }, order);
+                return CreatedAtAction(nameof(Get), order);
             }
         }
 

@@ -1,14 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProductService.Model;
 
-namespace OrderService.DBContexts
+namespace ProductService.DBContexts
 {
     public class ProductContext : DbContext
     {
         public ProductContext(DbContextOptions<ProductContext> options) : base(options)
         {
         }
-        public DbSet<Product> Orders { get; set; }
+        public DbSet<Product> Products { get; set; }
 
 
     }

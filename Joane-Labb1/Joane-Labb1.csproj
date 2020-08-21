@@ -12,6 +12,8 @@
     <Compile Remove="Data\Migrations\20200703073523_CartCreate.Designer.cs" />
     <Compile Remove="Data\Migrations\20200730202855_Orders.cs" />
     <Compile Remove="Data\Migrations\20200730202855_Orders.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200821110948_Create.cs" />
+    <Compile Remove="Data\Migrations\20200821110948_Create.Designer.cs" />
   </ItemGroup>
 
 

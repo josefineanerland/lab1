@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Joane-Labb1", "Joane-Labb1\Joane-Labb1.csproj", "{8206945D-2045-4872-BA92-3A36F31D622C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService", "OrderServices\OrderService.csproj", "{E6E1C258-DE1A-484E-BA86-18822EB1F695}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService", "OrderServices\OrderService.csproj", "{E6E1C258-DE1A-484E-BA86-18822EB1F695}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductService", "ProductService\ProductService.csproj", "{9770359E-B695-4186-AB46-E76C977A9476}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductService", "ProductService\ProductService.csproj", "{9770359E-B695-4186-AB46-E76C977A9476}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductService.Test", "ProductService.Test\ProductService.Test.csproj", "{A5644418-9D30-49D1-8561-26A75BBC5FBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{9770359E-B695-4186-AB46-E76C977A9476}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9770359E-B695-4186-AB46-E76C977A9476}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9770359E-B695-4186-AB46-E76C977A9476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5644418-9D30-49D1-8561-26A75BBC5FBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5644418-9D30-49D1-8561-26A75BBC5FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5644418-9D30-49D1-8561-26A75BBC5FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5644418-9D30-49D1-8561-26A75BBC5FBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
